@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "NZIFF Calendar export tool",
+  "description": "This extension adds a button to download your wishlist as a calendar file on the wishlist page.",
+  "version": "1.0",
+
+  "permissions": [
+    "*://www.nziff.co.nz/*"
+  ],
+  "content_scripts": [{
+      "matches": ["*://www.nziff.co.nz/*"],
+      "js": ["background.js"]
+  }],
+  "web_accessible_resources" : ["script.js", "ics.js", "moment.js"]
+}
