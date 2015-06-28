@@ -1,4 +1,4 @@
-console.log("script injected");
+// console.log("script injected");
 
 var generateICS = function() {
   nziffWishlist = angular.element('body').injector().get("Wishlist");
@@ -11,7 +11,7 @@ var generateICS = function() {
     var date = day.substr(0, 4) + "-" + day.substr(4);
     date = date.substr(0, 7) + "-" + date.substr(7);
     date = moment(date);
-    return moment(date.valueOf() + time*1000).toDate();
+    return moment(date.valueOf() + time*1000).toDate().toUTCString();
   };
 
   var cal = ics();
@@ -28,8 +28,8 @@ var generateICS = function() {
 };
 
 
-$(".cta-control").append("<a class=\"btn btn-regular btn-buy btn-ics btn-block doubleclick\"><span class=\"label\">Download Sched.</span></a>")
-$(".cta-control").on("click", ".btn-ics", function(event) {
+$(".mynziff-wishlist-article nav.social-nav").append("<a class=\"btn btn-regular btn-buy btn-ics btn-block doubleclick\"><span class=\"label\">Download Sched.</span></a>")
+$(".mynziff-wishlist-article nav.social-nav").on("click", ".btn-ics", function(event) {
   event.preventDefault();
   generateICS();
   return false;

@@ -3,7 +3,7 @@
 
   "name": "NZIFF Calendar export tool",
   "description": "This extension adds a button to download your wishlist as a calendar file on the wishlist page.",
-  "version": "1.0",
+  "version": "2.0",
 
   "permissions": [
     "*://www.nziff.co.nz/*"
