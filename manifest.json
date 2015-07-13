@@ -12,5 +12,5 @@
       "matches": ["*://www.nziff.co.nz/*"],
       "js": ["background.js"]
   }],
-  "web_accessible_resources" : ["script.js", "ics.js", "moment.js"]
+  "web_accessible_resources" : ["script.js", "ics.js", "moment.js", "moment-timezone.js"]
 }

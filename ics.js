@@ -16,7 +16,8 @@ var ics = function() {
     var calendarEvents = [];
     var calendarStart = [
         'BEGIN:VCALENDAR',
-        'VERSION:2.0'
+        'VERSION:2.0',
+        'X-WR-TIMEZONE:Pacific/Auckland'
     ].join(SEPARATOR);
     var calendarEnd = SEPARATOR + 'END:VCALENDAR';
 
@@ -58,16 +59,15 @@ var ics = function() {
 
             // var start = start_year + start_month + start_day + start_time;
             // var end = end_year + end_month + end_day + end_time;
-
-            var start = moment(begin).utc().format('YYYYMMDDTHHmmss') + 'Z';
-            var end = moment(stop).utc().format('YYYYMMDDTHHmmss') + 'Z';
+            var start = moment(begin).tz("Pacific/Auckland").format('YYYYMMDDTHHmmss');
+            var end = moment(stop).tz("Pacific/Auckland").format('YYYYMMDDTHHmmss');
 
             var calendarEvent = [
                 'BEGIN:VEVENT',
                 'CLASS:PUBLIC',
                 'DESCRIPTION:' + description,
-                'DTSTART;VALUE=DATE:' + start,
-                'DTEND;VALUE=DATE:' + end,
+                'DTSTART:' + start,
+                'DTEND:' + end,
                 'LOCATION:' + location,
                 'SUMMARY;LANGUAGE=en-us:' + subject,
                 'TRANSP:TRANSPARENT',
