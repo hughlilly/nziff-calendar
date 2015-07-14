@@ -24,7 +24,7 @@ var generateICS = function() {
 
     cal.addEvent(session.title, session.title, location, startDate.toString(), endDate.toString());
   });
-  cal.download("nziff_2014");
+  cal.download("nziff");
 };
 
 
